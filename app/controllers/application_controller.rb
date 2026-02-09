@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_logout_url
-    book_path
+    root_path
   end
 end

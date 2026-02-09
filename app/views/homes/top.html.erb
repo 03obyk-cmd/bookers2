@@ -1,2 +1,23 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+
+      <h1>Welcome to <strong>Bookers</strong> !!</h1>
+      <br>
+      <p>In <strong>Bookers</strong>,</P>
+      <p>you can share and exchange your opinions , inpressions , and emotions </P>
+      <p>about various books!</p>
+      <br>
+
+      <div class="btn-wrapper col-10 mx-auto text-center">
+        <div class="row mb-3">
+          <%= link_to "Log in", new_session_path, class: "btn btn-info btn-sm btn-block" %>
+        </div>
+        <div class="row">
+          <%= link_to "Sign up", new_user_path, class: "btn btn-success btn-sm btn-block" %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
