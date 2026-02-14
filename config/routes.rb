@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'home/about', to: 'homes#about'
 
   resources :books, only: [:new, :create, :index, :show, :edit]
-  resources :users, only: [:new, :create, :show, :edit] , path_names: { new: 'sign_up' }
+  resources :users, only: [:new, :create, :show, :edit, :update] , path_names: { new: 'sign_up' }
 
   resource :session
   resources :passwords, param: :token
