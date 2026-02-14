@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-3">
+    <div class="col-md-3 me-5">
       <%= render "users/info", user: @book.user %>
       <%= render "books/form", book: Book.new %>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h2>Book detail</h2>
 
       <table class="table">
@@ -14,7 +14,7 @@
           <tr>
             <td>
               <%= link_to user_path(@book.user) do %>
-                <%= image_tag @book.user.get_profile_image(50,50) %><br>
+                <%= image_tag @book.user.get_profile_image(70,70) %><br>
                 <%= @book.user.name %>
               <% end %>
             </td>
@@ -22,9 +22,12 @@
             <td><%= @book.body %></td>
             <td>
               <% if @book.user == Current.user %>
-                <%= link_to "Edit", edit_book_path(@book) %>
-                |
-                <%= link_to "Destroy", book_path(@book), data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" } %>
+                <%= link_to "Edit", edit_book_path(@book), class: "btn btn-success btn-sm" %>
+              <% end %>
+            </td>
+            <td>
+              <% if @book.user == Current.user %>
+                <%= link_to "Destroy", book_path(@book), data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" }, class: "btn btn-danger btn-sm" %>
               <% end %>
             </td>
           </tr>

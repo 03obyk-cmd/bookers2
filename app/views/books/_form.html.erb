@@ -1,15 +1,15 @@
 <h2>New book</h2>
 
 <%= form_with model: book, data: { turbo: false } do |f| %>
-  <div>
+  <div class="mb-3">
     <label>Title</label><br>
-    <%= f.text_field :title %>
-  </div>
-  <br>
-  <div>
-    <label>Opinion</label><br>
-    <%= f.text_area :body %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   
-  <%= f.submit "Create Book" %>
+  <div class="mb-3">
+    <label>Opinion</label><br>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  
+  <%= f.submit "Create Book", class: "btn btn-success" %>
 <% end %>

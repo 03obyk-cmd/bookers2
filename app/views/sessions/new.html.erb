@@ -16,7 +16,7 @@
     <%= form.check_box :remember_me %>
     <%= form.label :remember_me, "Remember me" %>
   </div>
-  <%= form.submit "Log in" %>
+  <%= form.submit "Log in", class: "btn btn-info btn-sm" %>
 <% end %>
 <%= link_to "Sign up", new_user_path %><br>
 <%= link_to "Forgot password?", new_password_path %>
