@@ -2,12 +2,12 @@
 
 <%= form_with model: book, data: { turbo: false } do |f| %>
   <div>
-    <label>Title</label>
+    <label>Title</label><br>
     <%= f.text_field :title %>
   </div>
-
+  <br>
   <div>
-    <label>Opinion</label>
+    <label>Opinion</label><br>
     <%= f.text_area :body %>
   </div>
   

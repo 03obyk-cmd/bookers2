@@ -9,12 +9,28 @@
     <div class="col-md-9">
       <h2>Book detail</h2>
 
-      <% if @book.user == current_user %>
-        <%= link_to "Edit", edit_book_path(@book) %>
-        |
-        <%= link_to "Destroy", book_path(@book), data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" } %>
-      <% end %>
-    </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <%= link_to user_path(@book.user) do %>
+                <%= image_tag @book.user.get_profile_image(50,50) %><br>
+                <%= @book.user.name %>
+              <% end %>
+            </td>
+            <td><%= link_to @book.title, book_path(@book) %></td>
+            <td><%= @book.body %></td>
+            <td>
+              <% if @book.user == Current.user %>
+                <%= link_to "Edit", edit_book_path(@book) %>
+                |
+                <%= link_to "Destroy", book_path(@book), data: { turbo_method: :delete, turbo_confirm: "本当に消しますか？" } %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
+    </div>
   </div>
 </div>
